@@ -1,0 +1,98 @@
+<h1>Node.JS Challenge</h1>
+<section class="insert">
+    <h3>Insert Data</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="title">Code</label>
+            <input type="text" id="code" name="code">
+        </div>
+        <div class="input">
+            <label for="content">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="input">
+            <label for="author">Price</label>
+            <input type="text" id="price" name="price">
+        </div>
+        <div class="input">
+            <label for="author">Type</label>
+            <input type="text" id="type" name="type">
+        </div>
+        <div class="input">
+            <label for="author">Date</label>
+            <input type="text" id="date" name="date">
+        </div>
+        <div class="input">
+            <label for="author">Departure Station</label>
+            <input type="text" id="departureStation" name="departureStation">
+        </div>
+        <div class="input">
+            <label for="author">Arrival Station</label>
+            <input type="text" id="arrivalStation" name="arrivalStation">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+</section>
+<section class="get">
+    <h3>Get Data</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <form action="/delete" method="post">
+                    <input type="hidden" id="id" name="id" value={{ this._id }}>
+                    <button type="submit" style="background-color:red; position:relative; left:70%;">DELETE</button>
+                </form>
+                <div>Code: {{ this.code }}</div>
+                <div>Name: {{ this.name }}</div>
+                <div>Price: {{ this.price }}</div>
+                <div>Departure Station: {{ this.departureStation }}</div>
+                <div>Arrival Station: {{ this.arrivalStation }}</div>
+                <div>ID: {{ this._id }}</div>
+                <form action="/generateJson" method="post">
+                    <input type="hidden" id="id" name="id" value={{ this._id }}>
+                    <button type="submit">GENERATE JSON</button>
+                </form>
+            </article>
+        {{/each}}
+    </div>
+</section>
+<section class="update">
+    <h3>Update Data</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="title">Code</label>
+            <input type="text" id="code" name="code">
+        </div>
+        <div class="input">
+            <label for="content">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="input">
+            <label for="author">Price</label>
+            <input type="text" id="price" name="price">
+        </div>
+        <div class="input">
+            <label for="author">Type</label>
+            <input type="text" id="type" name="type">
+        </div>
+        <div class="input">
+            <label for="author">Date</label>
+            <input type="text" id="date" name="date">
+        </div>
+        <div class="input">
+            <label for="author">Departure Station</label>
+            <input type="text" id="departureStation" name="departureStation">
+        </div>
+        <div class="input">
+            <label for="author">Arrival Station</label>
+            <input type="text" id="arrivalStation" name="arrivalStation">
+        </div>
+        <button type="submit">UPDATE</button>
+    </form>
+</section>
+</section>
